@@ -54,36 +54,42 @@
               <label for="" class="text-sm">Full Name</label><span class="text-green-300 text-lg">*</span>
             </div>
             <div class="flex items-baseline ">
-              <input type="text" placeholder="Full name"
+              <input id="name-input" type="text" placeholder="Full name"
                 class="ring-1 ring-gray-300 w-full rounded-md mt-2 px-4 py-2 outline-none focus:ring-2 focus:ring-green-200">
-              <span class="error"><i class="fa-solid fa-circle-exclamation hidden  text-red-600 ml-2"></i></span>
-              <span class="error"><i class="fa-solid fa-circle-check hidden text-green-600"></i></span>
+              <span class="error hidden"><i class="fa-solid fa-circle-exclamation   text-red-600 ml-2"></i></span>
+              <span class="done hidden"><i class="fa-solid fa-circle-check  text-green-600 ml-2"></i></span>
             </div>
+            <span id="error-message" class="hidden"></span>
           </div>
           <div>
             <div class="flex items-end">
               <label for="" class="text-sm">Email Address</label><span class="text-green-300 text-lg">*</span>
             </div>
             <div class="flex items-baseline">
-              <input type="text" placeholder="Email Adress"
+              <input id="email-input" type="text" placeholder="Email Adress"
                 class="ring-1 ring-gray-300 w-full rounded-md mt-2 px-4 py-2 outline-none focus:ring-2 focus:ring-green-200">
-              <span class="error"><i class="fa-solid fa-circle-exclamation hidden  text-red-600 ml-2"></i></span>
-              <span class="error"><i class="fa-solid fa-circle-check hidden text-green-600"></i></span>
+              <span class="error hidden"><i class="fa-solid fa-circle-exclamation   text-red-600 ml-2"></i></span>
+              <span class="done hidden"><i class="fa-solid fa-circle-check  text-green-600 ml-2"></i></span>
             </div>
+            <span id="error-message" class="error-message hidden"></span>
           </div>
           <div>
-            <div class="flex items-end mb-2">
+            <div id="query-type-container" class="flex items-end mb-2">
               <label for="" class="text-sm">Query Type</label><span class="text-green-300 text-lg">*</span>
             </div>
-            <div class="flex items-center mb-2 ring-1 ring-gray-300 w-full rounded-md mt-2 px-4 py-2 outline-none focus:ring-2 focus:ring-green-200 mr-4">
-              <input id="general" name="queryType" type="radio"
-                class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-              <label for="general" name=query class="ml-2 text-sm text-gray-700">General Inquiry</label>
-            </div>
-            <div class="flex items-center ring-1 ring-gray-300 w-full rounded-md mt-2 px-4 py-2 outline-none focus:ring-2 focus:ring-green-200 mr-4">
-              <input id="support" name="queryType" type="radio"
-                class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-              <label for="support" name="query" class="ml-2 text-sm text-gray-700">Support</label>
+            <div class="flex justify-between">
+              <div
+                class="flex items-center ring-1 ring-gray-300 w-full rounded-md mt-2 px-4 py-2 outline-none focus:ring-2 focus:ring-green-200 mr-4">
+                <input id="general" name="query-type" type="radio"
+                  class="h-4 w-4 border-gray-300 rounded">
+                <label for="general" class="ml-2 text-sm text-gray-700">General Enquiry</label>
+              </div>
+              <div
+                class="flex items-center ring-1 ring-gray-300 w-full rounded-md mt-2 px-4 py-2 outline-none focus:ring-2 focus:ring-green-200 mr-4">
+                <input id="support" name="query-type" type="radio"
+                  class="h-4 w-4 border-gray-300 rounded">
+                <label for="support" class="ml-2 text-sm text-gray-700">Support</label>
+              </div>
             </div>
           </div>
           <div>
@@ -91,23 +97,31 @@
               <label for="" class="text-sm">Message</label><span class="text-green-300 text-lg">*</span>
             </div>
             <div class="flex items-baseline">
-              <textarea type="text" placeholder="Message" rows="4"
+              <textarea id="message-input" type="text" placeholder="Message" rows="4"
                 class="ring-1 ring-gray-300 w-full rounded-md mt-2 px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300">
             </textarea>
-              <span class="error"><i class="fa-solid fa-circle-exclamation hidden  text-red-600 ml-2"></i></span>
-              <span class="error"><i class="fa-solid fa-circle-check hidden text-green-600"></i></span>
+              <span class="error hidden"><i class="fa-solid fa-circle-exclamation   text-red-600 ml-2"></i></span>
+              <span class="done hidden"><i class="fa-solid fa-circle-check  text-green-600 ml-2"></i></span>
             </div>
+            <span id="error-message" class="hidden"></span>
           </div>
-          <button
-            class="inline-block self-end bg-green-600 font-bold rounded-lg px-6 py-2 uppercase text-white  text-sm">Send
+          <button id="submit"
+            class="inline-block self-end shadow-md bg-gradient-to-r from-green-300 to-green-800 font-bold rounded-lg px-6 py-2 uppercase text-white  text-sm  transition-all hover:bg-green-300 hover:shadow-none">Send
             Message</button>
         </form>
       </div>
     </div>
   </div>
+  <div id="final-success" class="hidden flex w-svw h-svh bg-gray-300 opacity-95 fixed top-0 left-0 z-10 justify-center items-center">
+    <div class="bg-slate-500 w-fit p-5 rounded-3xl flex items-center relative text-2xl z-50 max-sm:mx-4 max-sm:text-lg">
+      <p class="text-white font-bold ">you'r message sent succesfully
+      </p><i class="fa-solid fa-circle-check   text-green-600 ml-2"></i></span>
+    </div>
+  </div>
 
 
   <script src="./index.js" type="module"></script>
+  <script src="./validation.js" type="module"></script>
 </body>
 
 </html>
